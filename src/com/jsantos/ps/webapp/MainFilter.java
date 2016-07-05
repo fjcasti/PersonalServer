@@ -100,7 +100,7 @@ public class MainFilter implements Filter{
 		Logger.logInfo(MODULE, "Method Called : forwardObjectViewer()");
 		if(!( uri.endsWith(".js") || uri.endsWith(".jpg") || uri.endsWith(".jpeg") || uri.endsWith(".gif") || uri.endsWith(".css") || uri.endsWith(".png"))){
 			Logger.logInfo(MODULE, "Method Called : forwardObjectViewer() first If()");
-			if (uri.startsWith("/psh2/" + OID_MARKER)){
+			if (uri.startsWith(request.getContextPath() + "/" + OID_MARKER)){
 				Logger.logInfo(MODULE, "Method Called : forwardObjectViewer() second If()");
 				String oid = findOidFromUrlString(uri);
 				//String oid = uri.substring(("/personalserver/" + OID_MARKER).length(), uri.length());
