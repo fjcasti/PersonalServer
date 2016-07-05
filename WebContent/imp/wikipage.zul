@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<zk>
+	<div vflex="true">
+		<tabbox apply="com.jsantos.ps.objects.wiki.WikiPageController" vflex="true">
+			<tabs>
+				<tab label="Title" id="titleTab" closable="false"/>
+				<tab label="Edit" id="editTab" closable="false"/>
+				<tab label="History" id="historyTab" closable="false"/>
+			</tabs>
+			<tabpanels>
+				<tabpanel id="htmlView" style="overflow:auto"/>
+				<tabpanel id="editView" vflex="true" >
+					<label style="font-weight:bold;">Title: </label> <textbox id="textboxTitle" style="margin-bottom:5px" width="600px"/>
+					<div id="smallDiv" style="height:5px"></div>
+					<button label="Save" id="saveButton"/>
+				</tabpanel>
+				<tabpanel />
+			</tabpanels>
+		</tabbox>
+		<include src="/imp/taglist.zul" />
+	</div>
+	
+</zk>

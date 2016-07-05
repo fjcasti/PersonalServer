@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+<link href="/personalserver/zkau/web/js/ext/FCKeditor/editor/css/fck_editorarea.css" type="text/css" rel="stylesheet" />
+ -->
+<zk xmlns:h="http://www.w3.org/1999/xhtml">
+	<borderlayout apply="com.jsantos.ps.objects.mail.MailController">
+		<north>
+			<h:table style="background-color:lightblue" width="100%">
+				<h:tr><h:td class="z-label" width="60px">From: </h:td><h:td align="left"><label id="fromLabel">pepe@sucasa.com</label></h:td></h:tr>
+				<h:tr><h:td class="z-label">Subject: </h:td><h:td align="left"><label id="subjectLabel">this is a test mail</label></h:td></h:tr>
+			</h:table>
+		</north>
+		<center flex="true" autoscroll="true">
+			<div id="mailBodyDiv" />
+		</center>
+		<south>
+			<h:table style="background-color:lightblue" width="100%">
+				<h:tr>
+					<h:td class="z-label" width="60px">Attachments: </h:td>
+					<h:td id="attachments"></h:td>
+				</h:tr>
+				<h:tr>
+					<h:td colspan="2">
+						<include src="/imp/taglist.zul" />
+					</h:td>					
+				</h:tr>
+			</h:table>
+		</south>
+	</borderlayout>
+</zk>

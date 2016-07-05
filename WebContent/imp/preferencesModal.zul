@@ -1,0 +1,49 @@
+<window id="preferencesPage" title="Preferences" border="normal" width="600px"  closable="true"
+apply="com.jsantos.ps.webapp.PreferencesController" >
+<radiogroup id="radiogroup"  />
+<tabbox >
+    <tabs>
+        <tab label="Mail"  />
+         
+    </tabs>
+    <tabpanels>
+        <tabpanel>
+        <vlayout>
+        <grid>
+        <columns>
+            <column width="150px" />
+            <column  />
+            
+        </columns>
+        	<rows>
+        	<row>
+        	 Mail server(IMAP):       	
+        	<textbox id="textboxMailServer"/>
+        	</row>
+        	<row >
+        	Mail user name:
+        	<textbox id="textboxUserName"/>
+        	</row>
+        	<row >
+        	Mail user pass:
+        	<textbox id="textboxUserPass" type="password"/>
+        	</row>
+        	<row>
+        	<button id="schedulerButton"  label="Scheduler" />
+        	<label id="cronHuman" value="" ></label>
+        	   	</row>
+        	</rows>
+        	
+        </grid>
+       
+      
+       
+       </vlayout>
+       <button id="saveAccountButton" hflex="1" label="Save" height="50px"/>
+         </tabpanel>
+       
+    </tabpanels>
+</tabbox>
+<label id="cronString" value="" visible="0" ></label>
+
+</window>

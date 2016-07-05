@@ -1,0 +1,19 @@
+<zk xmlns:h="http://www.w3.org/1999/xhtml">
+		<vbox hflex="true" vflex="true" id="theVBox"  apply="com.jsantos.ps.finder.FinderController2">
+			<include src="/imp/searchbox.zul" />
+			<div id="boolmarks" style="background-color:#F2F2F2" />
+			<tabbox mold="accordion-lite" id="theTabbox">
+				<tabs>
+					<tab label="Recent" id="recentTab"/>
+					<tab label="Linking here" />
+					
+				</tabs>
+				<tabpanels>
+					<tabpanel id="recentTabPanel" >
+					
+					</tabpanel>
+					<tabpanel id="linkingHereTabPanel" />
+				</tabpanels>
+			</tabbox>
+		</vbox>
+</zk>

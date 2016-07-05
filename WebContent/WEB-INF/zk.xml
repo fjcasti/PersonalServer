@@ -1,0 +1,5 @@
+<zk>
+<system-config>
+	<disable-event-thread>false</disable-event-thread>
+</system-config>
+</zk>

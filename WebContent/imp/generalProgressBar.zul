@@ -1,0 +1,12 @@
+<zk>
+<window id="pgb" border="normal" width="350px" title="titulo" mode="modal" position="parent"
+use="com.jsantos.ps.webapp.GeneralProgressBarController">
+
+
+<label id="curr_step" value="0" />%
+<vlayout>
+<progressmeter id="curr_met" value="0" width="300px" />
+<button id="closeButton" label="close" hflex="1" onClick="pgb.detach()" visible="false"/>
+</vlayout>
+</window>
+</zk>

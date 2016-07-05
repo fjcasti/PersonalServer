@@ -1,0 +1,40 @@
+<zk xmlns:h="http://www.w3.org/1999/xhtml">
+	<window title="File" apply="com.jsantos.ps.objects.file.FileController" hflex="true">
+		<h:table style="background-color:lightblue;width:100%">
+			<h:tr>
+				<h:td>
+					<h:table>
+						<h:tr>
+							<h:td valign="top">
+								<h:table align="center" width="100%">
+									<h:tr>
+										<h:td class="z-label">FileName:</h:td>
+										<h:td><textbox width="500px" id="textboxFileName" onOK="textboxFileName.setFocus(false)"/></h:td>
+									</h:tr>
+									<h:tr>
+										<h:td  class="z-label">Mime Type:</h:td>			 
+										<h:td><label id="labelMimeType" /></h:td>			 
+									</h:tr>
+									<h:tr>
+										<h:td  class="z-label">Created: </h:td>
+										<h:td><label id="labelCreated" /></h:td>
+									</h:tr>
+									<h:tr>
+										<h:td  class="z-label">Version: </h:td>
+										<h:td><label id="labelVersion" /></h:td>
+									</h:tr>
+									<h:tr>
+										<h:td colspan="2"><toolbarbutton id="linkDownload" label="Download / Open" image="/img/download.png" /></h:td>
+									</h:tr>
+								</h:table>
+							</h:td>
+						</h:tr>
+					</h:table>
+				</h:td>
+			</h:tr>
+			<h:tr>
+				<h:td><include src="/imp/taglist.zul" /></h:td>
+			</h:tr>
+		</h:table>
+	</window>
+</zk>

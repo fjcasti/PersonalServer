@@ -1,0 +1,147 @@
+<?page title="Personal Server" contentType="text/html;charset=UTF-8"?>
+<?link rel="shortcut icon" type="image/x-icon" href="/img/icons/favicon.ico"?>
+<zk  xmlns:h="http://www.w3.org/1999/xhtml">
+<style>
+	
+.z-menubar-hor .z-menu,.z-menubar-hor .z-menu-item,.z-menubar-hor .z-menu-btn,.z-menubar-hor .z-menu-item-btn,
+.z-menubar-hor span,.z-menubar-hor a,.z-menubar-hor div,
+.z-menubar-ver .z-menu,.z-menubar-ver .z-menu-item,.z-menubar-ver .z-menu-btn,.z-menubar-ver .z-menu-item-btn,
+.z-menubar-ver span,.z-menubar-ver a,.z-menubar-ver div,
+.z-menu-cnt, .z-menu-item-cnt {
+
+font-weight:normal;
+white-space: nowrap;
+font-family: Arial;
+font-size:17px; 
+color: #636363;
+}
+
+.z-menubar-hor,.z-menubar-ver{background-image:none;}
+.z-menu-body-text-img .z-menu-inner-m .z-menu-btn,.z-menu-body-img .z-menu-inner-m .z-menu-btn,
+.z-menu-item-body-text-img .z-menu-item-inner-m .z-menu-item-btn{
+padding-left:32px;
+}
+
+.z-menu-label{
+	color:blue;
+}
+
+.z-menu-body-over .z-menu-inner-l,
+.z-menu-item-body-over .z-menu-item-inner-l,
+.z-menu-body-over .z-menu-inner-r,
+.z-menu-item-body-over .z-menu-item-inner-r
+{
+background-image : none;
+}
+.z-menu-body-over .z-menu-inner-m,
+.z-menu-item-body-over .z-menu-item-inner-m {
+background-image : none;
+}
+
+.container,.z-menubar-hor,.z-menubar-ver {
+    border: 1px solid #D8D8D8;
+}
+.z-menubar-hor {
+    width: 580px;
+}
+.z-menubar-ver {
+    border-right: 0 none;
+    width: 149px;
+    height: 420px;
+}
+ 
+.container {
+    padding: 5px;
+}
+ 
+.z-menu-item-body {
+    padding: 5px 2px;
+}
+.z-menubar-ver .z-menu-body,
+.z-menubar-ver .z-menu-item-body {
+    width: 140px !important;
+}
+ 
+.z-menubar-ver .z-menu-item-body .z-menu-item-inner-m,
+.z-menubar-ver .z-menu-body .z-menu-item-inner-m,
+.z-menubar-ver .z-menu-item-body .z-menu-inner-m,
+.z-menubar-ver .z-menu-body .z-menu-inner-m {
+    text-align: left;
+}
+ 
+.mo_head {
+    font-size: 24px;
+    font-weight: normal;
+    color: #F26522;
+    margin-bottom: 0px;
+}
+ 
+.mo_footer {
+    background: #202020;
+    width: 582px;
+    height: 20px;
+    color: #c6c6c6;
+    text-align: center;
+}
+
+
+</style>
+
+ 
+	<borderlayout height="100%" apply="com.jsantos.ps.mainwindow.MainWindowController">
+		<north>
+			<hlayout hflex="1" >			
+						<menubar  hflex="1">
+						<menuitem  image="/img/Computer-32.png"  />
+							<menu sclass="menucss" label="New" id="menuNew" tooltiptext="New" image="/img/new-24.png" >
+								<menupopup>
+									<menuitem id="menuitemNewNote" label="Note" tooltiptext="Create New Note" image="/img/New-16.png"/>
+									<menuseparator></menuseparator>
+									<menuitem id="menuitemNewFile" label="File" tooltiptext="Create New File" image="/img/file_upload-16.png"/>
+									<menuseparator></menuseparator>
+									<menuitem label="Task" tooltiptext="Create New Task" image="/img/Task-16.png"/>
+									<menuseparator></menuseparator>
+									<menuitem id="menuitemSavedSearch" label="Saved Search" tooltiptext="Save Search" image="/img/search-16.png"/>
+									<menuseparator></menuseparator>
+									<menuitem id="menuitemNewContact" label="Contact" tooltiptext="Create New Contact" image="/img/contact-vcard-16.png"/>
+								</menupopup>
+							</menu>
+							<menu sclass="menucss" label="System" id="menuSystem" tooltiptext="System" image="/img/system-24.png" >
+								<menupopup>
+									<menuitem label="Backup" id="menuitemBackup" tooltiptext="Backup" image="/img/Backup-16.png"/>
+									<menuseparator></menuseparator>
+									<menuitem label="Preferences" id="menuitemPreferences" tooltiptext="Preferences" image="/img/preferences-16.png"/>
+									<menuseparator></menuseparator>
+									<menuitem label="Check Mail" id="check_mail" tooltiptext="Check Mail" image="/img/Mail-16.png"/>
+								</menupopup>
+							</menu>
+							<menu sclass="menucss" label="Tools" tooltiptext="Tools" id="menuTools" image="/img/Tools-24.png" >
+								<menupopup>
+									<menuitem label="Clipboard" tooltiptext="Clipboard" id="menuitemClipboard" image="/img/clipboard-16.png"/>
+								</menupopup>
+							</menu>
+						</menubar>
+						<menubar width="270px">
+							<menu sclass="menucss" label="Help" tooltiptext="Help" image="/img/Help-16.png">
+								<menupopup>
+									<menuitem label="About" tooltiptext="About" image="/img/Actions-help-16.png" />
+								</menupopup>
+							</menu>							
+							<menuitem label="Log out" tooltiptext="Log out"  style="float:right" id="logOutButton" image="/img/logout-16.png"  />
+						</menubar>
+											
+						<!-- <button id="logOutButton" image="/img/LogOut.png" label="Log out" width="8px" height="8px"/>-->
+										
+				</hlayout>
+			
+		</north>
+		<west size="350px" title="Tools" flex="true" splittable="false" collapsible="true" border="0" autoscroll="true">
+			<div style="border:solid;border-color:lightgrey;border-width:1px">
+				<include src="finder2.zul" />
+			</div>
+		</west>
+		<center flex="true" border="0" autoscroll="true">
+			<include id="centerArea" />
+		</center>
+	</borderlayout>
+</zk>

@@ -1,0 +1,6 @@
+<zk xmlns:h="http://www.w3.org/1999/xhtml">
+	<?meta name="viewport" content="width=device-width, initial-scale=1.0"?>  
+	<h:b>Personal Server search:</h:b>
+	<h:hr/> 
+	<include src="/imp/finder2.zul" />	
+</zk>

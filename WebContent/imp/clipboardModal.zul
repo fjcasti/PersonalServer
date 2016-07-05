@@ -1,0 +1,43 @@
+<window id="clipboardPage" title="Clipboard" border="normal" width="600px"  closable="true"
+apply="com.jsantos.ps.clipboard.ClipboardController" >
+
+        <grid>
+        <columns>
+        	
+            <column width="50px" />
+            <column  />
+        
+        </columns>
+        	<rows>
+        	<row>
+        	
+        	Text:
+        	
+        	<vlayout>
+        	<textbox id="textboxClipboard" hflex="1"/>
+        	
+        	</vlayout>
+        	</row>
+        	<row >
+        	
+        	File:
+        	
+        	
+        	<hlayout>
+        	       	<button id="buttonClipboardUpload"  label="Upload" />
+        	       	<toolbarbutton id="toolbarbuttonFileName" label="empty" />
+        	</hlayout>
+        	
+        	</row>
+        	<row>
+        	<checkbox id="isPublicCheckbox"  />
+        	
+        	<label id="labelPublicLink" style="color: red" />
+        	</row >
+        	</rows>
+        </grid>
+       
+
+
+
+</window>

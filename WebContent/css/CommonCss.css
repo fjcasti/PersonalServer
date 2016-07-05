@@ -1,0 +1,7 @@
+@CHARSET "ISO-8859-1";
+.fieldLabel{
+		font-size:13px;
+		font-family: Arial;
+		padding-left:3px;		
+		font-weight: bold;
+}

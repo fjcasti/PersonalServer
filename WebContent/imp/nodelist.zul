@@ -1,0 +1,20 @@
+<zk xmlns:h="http://www.w3.org/1999/xhtml">
+	<listbox>
+		<listhead>
+			<listheader width="16px"> </listheader>
+			<listheader> </listheader>
+		</listhead>
+		<listitem>
+			<listcell ><h:img src="/img/icons/html.png" title="html"></h:img></listcell>
+			<listcell label="html title" ><h:a href="perico.html">perico</h:a></listcell>
+		</listitem>
+		<listitem>
+			<listcell image="/img/icons/fileref.png"/>
+			<listcell label="file name" />
+		</listitem>
+		<listitem>
+			<listcell image="/img/icons/mail.png" />
+			<listcell label="mail subject" />
+		</listitem>
+	</listbox>
+</zk>

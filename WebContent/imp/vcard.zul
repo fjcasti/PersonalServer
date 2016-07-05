@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<zk>
+<style>
+.z-textbox-readonly { background: none;border: none;  font-weight: bold; color:#444}
+</style>
+	<window  vflex="true" apply="com.jsantos.ps.objects.contact.VcardController">
+		<tabbox  width="600px">
+			<tabs>
+				<tab label="Contact" id="contactTab" closable="false"/>
+				<tab label="Private" id="privateTab" closable="false"/>
+				<tab label="Work" id="workTab" closable="false"/>
+				<tab label="Other" id="otherTab" closable="false"/>
+			</tabs>
+			<tabpanels>
+				<tabpanel id="contactView" style="overflow:auto">
+				<vlayout>
+				<hlayout>
+					<image id="generalImage"  style="width:100px;height:100px" src="/img/generic_contact_image.png" /> 
+					<grid hflex="1">
+					<columns>
+              		  <column  width="100px" />
+             		  <column/>
+            		</columns>
+					<rows>
+					 	<row> 
+						 <label value="Honor:"  />
+							<combobox id="honorPrefix" value="Mr." width="60px">
+								<comboitem label="Mr." 	 value="Mr." />
+								<comboitem label="Ms." 	 value="Ms." />
+								<comboitem label="Miss"  value="Miss" />
+							</combobox>
+						 </row>					
+					 	<row> 
+						 <label value="Name:"  />
+						 <textbox id="generalName" hflex="1" tabindex="1" value="" />
+						 </row>
+						 <row> 
+						 <label value="Mobile Phone:" />
+						 <textbox id="generalMobilePhone" hflex="1" value="" tabindex="1" />
+						 </row>
+						 <row> 
+						 <label value="Home Phone:"  />
+						 <textbox id="generalHomePhone" hflex="1" tabindex="1" value="" />
+						 </row>
+						 <row> 
+						 <label value="Email:"  />
+						 <textbox  id="generalEmail" hflex="1" tabindex="1" value="" />
+						 </row>
+						 
+						 <row> 
+						 <label value="Website:"  />
+						 <textbox  id="generalWebsite" hflex="1" tabindex="1" value="" />
+						 </row>
+						
+					</rows>
+					</grid>	    
+					
+				</hlayout>
+				<hlayout><button label="Upload Image" upload="true,maxsize=300">
+				<attribute name="onUpload"><![CDATA[
+					org.zkoss.util.media.Media media = event.getMedia();
+					if (media instanceof org.zkoss.image.Image) {
+						generalImage.setContent(media);
+					} else {
+						Messagebox.show("Not an image: "+media, "Error", Messagebox.OK, Messagebox.ERROR);
+						break;
+					}
+				]]></attribute>	
+				</button></hlayout>
+				<hlayout>
+					
+					<grid hflex="1">
+					<columns>
+              		  <column  width="100px" />
+             		  <column   />
+            		</columns>
+					<rows>
+					 <row > 
+						 <label value="Address:"  />
+						 <textbox id="generalAddress" hflex="1" tabindex="1" value="" />
+						 </row>
+						 <row> 
+						 <label value="City:" />
+						 <textbox id="generalCity" hflex="1" tabindex="1" value="" />
+						 </row>
+						 <row> 
+						 <label value="State/province:"  />
+						 <textbox id="generalStateProvince" hflex="1" tabindex="1" value="" />
+						 </row>
+						 <row> 
+						 <label value="Zip/Postal Code:"  />
+						 <textbox id="generalZipPostalCode"   value="" hflex="1" tabindex="1" />
+						 </row>
+						 
+						 <row> 
+						 <label value="Country/Region:"  />
+						 <textbox id="generalCountryRegion" hflex="1" value="" tabindex="1" />
+						 </row>
+					</rows>
+					</grid>	    
+					
+				</hlayout>
+				</vlayout>
+				</tabpanel>
+				<tabpanel id="privateView" style="overflow:auto">
+				
+				
+				<hlayout>
+					
+					<grid hflex="1">
+					<columns>
+              		  <column  width="100px" />
+             		  <column   />
+            		</columns>
+					<rows>
+					 <row > 
+						 <label value="Address:"  />
+						 <textbox id="privateAddress" hflex="1" tabindex="1" value="" />
+						 </row>
+						 <row> 
+						 <label value="City:" />
+						 <textbox id="privateCity" hflex="1" tabindex="1" value="" />
+						 </row>
+						 <row> 
+						 <label value="State/province:"  />
+						 <textbox id="privateStateProvince" value=""  hflex="1" tabindex="1" />
+						 </row>
+						 <row> 
+						 <label value="Zip/Postal Code:"  />
+						 <textbox id="privateZipPostal" hflex="1" value=""  tabindex="1" />
+						 </row>
+						 
+						 <row> 
+						 <label value="Country/Region:"  />
+						 <textbox id="privateCountryRegion" hflex="1" value=""  tabindex="1" />
+						 </row>
+						
+						 <row> 
+						 <label value="Website:"  />
+						 <textbox id="privateWebsite" hflex="1" tabindex="1"  value="" />
+						 </row>
+						 
+						 <row> 
+						 <label value="Birthday:"  />
+						 <datebox  id="privateBirthday" cols="12" format="yyyy/MM/dd" onCreate="self.value = new Date()" mold="rounded" />
+						 </row>
+						
+					</rows>
+					</grid>	    
+					
+				</hlayout>
+				
+				</tabpanel>
+				<tabpanel id="workView" style="overflow:auto">
+				<hlayout>
+					
+					<grid hflex="1">
+					<columns>
+              		  <column  width="100px" />
+             		  <column   />
+            		</columns>
+					<rows>
+						<row > 
+						 <label value="Job Title:"  />
+						 <textbox  id="workJobTitle" hflex="1" tabindex="1" value=""  />
+						 </row>
+						 
+						 <row>
+						 <label value="Department:"  />
+						 <textbox  id="workDepartment" hflex="1" tabindex="1" value=""  />
+						 </row>
+					
+						<row > 
+						 <label value="Address:"  />
+						 <textbox  id="workAddress" hflex="1" tabindex="1" value=""  />
+						 </row>
+						 <row> 
+						 <label value="City:" />
+						 <textbox id="workCity" hflex="1" tabindex="1" value=""  />
+						 </row>
+						 <row> 
+						 <label value="State/province:"  />
+						 <textbox id="workStateProvince" hflex="1" tabindex="1" value=""  />
+						 </row>
+						 <row> 
+						 <label value="Zip/Postal Code:"  />
+						 <textbox id="workZipPostalCode" hflex="1" tabindex="1" value=""  />
+						 </row>
+						 
+						 <row> 
+						 <label value="Country/Region:"  />
+						 <textbox id="workCountryRegion" hflex="1" tabindex="1" value=""  />
+						 </row>
+						
+						 <row> 
+						 <label value="Website:"  />
+						 <textbox  id="workWebsite" hflex="1" tabindex="1" value="" />
+						 </row>
+ 					</rows>
+					</grid>	    
+					
+				</hlayout>
+				</tabpanel>
+				<tabpanel id="otherView" style="overflow:auto">
+				<hlayout>
+					
+					<grid hflex="1">
+					<columns>
+              		  <column  width="100px" />
+             		  <column   />
+            		</columns>
+					<rows>
+						<row > 
+						 <label value="Facebook:"  />
+						 <textbox  id="otherFacebook" hflex="1" tabindex="1" value=""  />
+						 </row>
+						 
+						 <row>
+						 <label value="Twitter:"  />
+						 <textbox  id="otherTwitter" hflex="1" tabindex="1" value=""  />
+						 </row>
+			
+						<row > 
+						 <label value="Google+:"  />
+						 <textbox id="otherGoogle" hflex="1" tabindex="1" value=""  />
+						 </row>
+						 
+						 <row> 
+						 <label value="Other:" />
+						 <textbox id="otherOther" hflex="1" tabindex="1" value=""  />
+						 </row>
+						 <row> 
+						 <label value="Comments:"  />
+						 <textbox id="otherComments" rows="10" hflex="1" tabindex="1" value="" />
+						 </row>
+ 					</rows>
+					</grid>	    
+				</hlayout>
+				</tabpanel>
+				
+			</tabpanels>
+		</tabbox>
+	</window>
+</zk>

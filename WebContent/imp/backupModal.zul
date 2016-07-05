@@ -1,0 +1,77 @@
+<window id="backupPage" title="Backup" border="normal" width="600px"  closable="true"
+apply="com.jsantos.ps.store.backup.BackupModalController" >
+<radiogroup id="radiogroup"  />
+<tabbox >
+    <tabs>
+        <tab label="Local copy"  />
+        <tab label="Remote copy"  />
+        <tab label="Restore"  />
+    </tabs>
+    <tabpanels>
+        <tabpanel>
+        <vlayout>
+        <grid>
+        <columns>
+            <column width="150px" />
+            <column  />
+            
+        </columns>
+        	<rows>
+        	<row>
+        	Path to local copy:
+        	
+        	<vlayout>
+        	<textbox id="textboxBackupPath" hflex="1"/>
+        	<label id="errorMsg" style="color: red" />
+        	</vlayout>
+        	</row>
+        	<row>
+        	<button id="schedulerButton"  label="Scheduler" />
+        	<label id="cronHuman" value="" ></label>
+        	   	</row>
+        	<row>
+        	      	<button id="runBackupNow"  label="Run now!" />
+        	</row>
+        	<!--  <row spans="2">
+        	Scheduler:
+        	</row>
+        	<row spans="2">
+        	<hlayout>
+        	<checkbox  label="Daily" id="checkboxDaily" />
+        	<checkbox  label="Weekly" id="checkboxWeekly" />
+        	<checkbox  label="Monthly" id="checkboxMonthly" />
+        	
+        	</hlayout>
+        	
+        	</row>
+        	-->
+        	</rows>
+        </grid>
+        <button id="saveBackupButton" hflex="1" label="Save" height="50px"/>
+       </vlayout>
+        </tabpanel>
+        <tabpanel>Not implemented</tabpanel>
+        <tabpanel>
+        <vlayout>
+        <grid id="backupListGrid">
+		<columns>
+            <column width="40px"></column>
+            <column >Date</column>
+            <column >User</column>
+            <column >Size</column>
+        </columns>
+        <rows>
+            
+          </rows>
+    	</grid>
+    	<button id="restoreButton" hflex="1" label="Restore now!" height="50px"/>
+    	
+		</vlayout>
+		</tabpanel>
+       
+    </tabpanels>
+</tabbox>
+
+<label id="cronString" value="" visible="0" ></label>
+
+</window>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>psh2</display-name>
+  
+ 
+ <!-- Personal Server --> 
+	<filter>
+		<filter-name>MainFilter</filter-name>
+		<filter-class>com.jsantos.ps.webapp.MainFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>MainFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	<listener>
+		<description>WEBAPP Initialization</description>
+		<display-name>WEBAPP Initialization</display-name>
+		<listener-class>com.jsantos.ps.webapp.CTX</listener-class>
+	</listener>
+	<servlet>
+		<description>File Server Servlet (this won't be necessary with tomcat 7)</description>
+		<servlet-name>FileServerServlet</servlet-name>
+		<servlet-class>com.jsantos.ps.objects.file.FileServerServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FileServerServlet</servlet-name>
+		<url-pattern>/FileServerServlet/*</url-pattern>
+	</servlet-mapping>
+	
+	<session-config>
+		<session-timeout>120</session-timeout>
+	</session-config>
+	
+	<welcome-file-list>
+		<welcome-file>nlogin.zul</welcome-file>
+	</welcome-file-list>	
+  
+  
+<!-- Quartz -->
+	
+	<servlet> 
+      <servlet-name>QuartzInitializer</servlet-name> 
+      <servlet-class>org.quartz.ee.servlet.QuartzInitializerServlet</servlet-class> 
+      <init-param>
+
+        <param-name>shutdown-on-unload</param-name>
+        <param-value>true</param-value>
+      </init-param>
+      <load-on-startup>2</load-on-startup>
+
+    </servlet>
+    
+    
+     
+  
+<!-- ZK -->
+	<listener>
+		<description>Used to cleanup when a session is destroyed</description>
+		<display-name>ZK Session Cleaner</display-name>
+		<listener-class>org.zkoss.zk.ui.http.HttpSessionListener</listener-class>
+	</listener>
+	
+	<servlet>
+		<description>ZK loader for ZUML pages</description>
+		<servlet-name>zkLoader</servlet-name>
+		<servlet-class>org.zkoss.zk.ui.http.DHtmlLayoutServlet</servlet-class>
+		<!-- Must. Specifies URI of the update engine (DHtmlUpdateServlet).
+		It must be the same as <url-pattern> for the update engine.
+		-->
+		<init-param>
+			<param-name>update-uri</param-name>
+			<param-value>/zkau</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>zkLoader</servlet-name>
+		<url-pattern>*.zul</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>zkLoader</servlet-name>
+		<url-pattern>*.zhtml</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description>The asynchronous update engine for ZK</description>
+		<servlet-name>auEngine</servlet-name>
+		<servlet-class>org.zkoss.zk.au.http.DHtmlUpdateServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		The servlet loads the DSP pages.</description>
+		<servlet-name>dspLoader</servlet-name>
+		<servlet-class>
+		org.zkoss.web.servlet.dsp.InterpreterServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>auEngine</servlet-name>
+		<url-pattern>/zkau/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>dspLoader</servlet-name>
+		<url-pattern>*.dsp</url-pattern>
+	</servlet-mapping>
+	
+	<context-param>
+	    <param-name>contextConfigLocation</param-name>
+	    <param-value>WEB-INF/restservice.xml</param-value>
+	</context-param>
+<!--    	<listener> -->
+<!-- 	    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class> -->
+<!--    	</listener>  -->
+	  
+<!--     <servlet> -->
+<!-- 			<description>Apache CXF Endpoint</description> -->
+<!-- 			<display-name>cxf</display-name> -->
+<!-- 			<servlet-name>cxf</servlet-name> -->
+<!-- 			<servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class> -->
+<!-- 			<load-on-startup>1</load-on-startup> -->
+<!-- 	</servlet> -->
+<!-- 	<servlet-mapping> -->
+<!-- 			<servlet-name>cxf</servlet-name> -->
+<!-- 			<url-pattern>/services/*</url-pattern> -->
+<!-- 	</servlet-mapping>  -->
+	
+</web-app>

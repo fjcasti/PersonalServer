@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<zk>
+	<window vflex="true" apply="com.jsantos.ps.objects.contact.ContactPageController">
+		<tabbox  vflex="true">
+			<tabs>
+				<tab label="Title" 		id="titleTab" 	closable="false"/>
+				<tab label="Edit" 		id="editTab" 	closable="false"/>
+				<tab label="History" 	id="historyTab" closable="false"/>
+			</tabs>
+			<tabpanels>
+				<tabpanel id="htmlView" style="overflow:auto;font-family:Arial;font-size:13px"/>
+				<tabpanel id="editView" vflex="true" style="overflow:auto" >
+				 		<include id="vcardZul" src="/imp/vcard.zul" />
+						<button label="Save" id="saveButton" />
+				</tabpanel>				
+			</tabpanels>
+		</tabbox>
+		<include  src="/imp/taglist.zul" />
+	</window>	
+</zk>

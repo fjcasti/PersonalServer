@@ -1,0 +1,5 @@
+<zk xmlns:h="http://www.w3.org/1999/xhtml">
+	<window apply="com.jsantos.ps.mainwindow.MainWindowControllerMobile" width="100%" height="10000px">
+			<include id="centerArea" width="100%" height="10000px"/>
+	</window>
+</zk>

@@ -1,0 +1,48 @@
+<zk xmlns:h="http://www.w3.org/1999/xhtml">
+<style src="/css/CommonCss.css"/>
+	<div id="contenedor" apply="com.jsantos.ps.finder.SearchBoxController">
+		
+		<hlayout style="margin-top:5px;margin-bottom:5px" >
+				<label zclass="fieldLabel" >Search:</label>
+				<textbox  height="20px" id="textboxSearch" width="240px" />
+		</hlayout>
+		<hlayout>
+		<button hflex="1" id="searchButton"  height="25px" label="Search" ></button>
+		</hlayout>	
+		<hlayout style="margin-top:5px;margin-bottom:5px">
+		<button hflex="1" height="25px" id="advancedButton"  label="Advanced Search" ></button>
+		</hlayout>
+		 	
+		<vlayout id="advancedForm" visible="false">
+		 	<label zclass="fieldLabel" style="align:center;" > 
+				Filter Type:
+			 </label>
+			<hlayout>
+			<combobox id="typeComboboxAdvancedSearch" width="240px" >
+				<comboitem label="all" value="" />
+				<comboitem label="note" value="html"/>
+				<comboitem label="file" value="fileref"/>
+				<comboitem label="mail" value="mail"/>
+				<comboitem label="task" value="task"/>
+				<comboitem label="contact" value="contact"/>
+			</combobox>
+			</hlayout>
+			
+			<hlayout>
+				<combobox id="tagCombobox" width="240px">
+					<comboitem label="Type new tag..."/>
+				</combobox>
+				<button id="addTagAdvancedSearch" height="22px" label="Add" ></button>
+			</hlayout>
+			
+			<div id="tagHolderAdvancedSearch">
+			</div>
+		
+		</vlayout>
+		
+		
+		<div id="resultsDiv" style="background-color:#F2F2F2">
+			
+		</div>
+	</div>
+</zk>

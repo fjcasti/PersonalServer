@@ -1,0 +1,34 @@
+<zk xmlns:h="http://www.w3.org/1999/xhtml">
+	<div width="100%" height="100%" apply="com.jsantos.ps.objects.savedsearch.SavedSearchController">
+		<borderlayout>
+			<north>
+				<h:table width="100%" style="background-color:lightblue">
+					<h:tr >
+						<h:td><label id="labeldescription">Description</label></h:td><h:td align="right"><toolbarbutton label="Edit" id="editbutton" image="/img/icons/arrow_down.png"/></h:td>
+					</h:tr>
+				</h:table>
+			</north>
+			<center flex="true" autoscroll="true">
+				<div>
+					<div id="editordiv" visible="false">
+						<h:table width="100%" style="background-color:lightblue" >
+							<h:tr>
+								<h:td class="z-label" width="80px">Description: </h:td><h:td><textbox id="descriptiontextbox" width="100%"/></h:td>
+							</h:tr>
+							<h:tr>
+								<h:td class="z-label" valign="top">SQL: </h:td><h:td><textbox id="sql" rows="4" width="100%"/></h:td>
+							</h:tr>
+							<h:tr>
+								<h:td> </h:td><h:td align="right"><button id="test" label="Test" /> <button id="save" label="Save"/></h:td>
+							</h:tr>
+						</h:table>
+					</div>
+					<div id="results" />
+				</div>
+			</center>
+			<south>
+				<include src="taglist.zul" />
+			</south>
+		</borderlayout>
+	</div>
+</zk>

@@ -1,0 +1,15 @@
+<zk xmlns:h="http://www.w3.org/1999/xhtml">
+	<borderlayout apply="com.jsantos.ps.objects.tag.TagViewerController">
+		<north>
+			<h:table style="background-color:lightblue" width="100%">
+				<h:tr><h:td class="z-label" width="60px">Tag: </h:td><h:td align="left"><label id="tagname">Here goes the tagname</label></h:td></h:tr>
+			</h:table>
+		</north>
+		<center flex="true" autoscroll="true">
+			<div id="searchresult" />
+		</center>
+		<south>
+			<include src="/imp/taglist.zul" />
+		</south>
+	</borderlayout>
+</zk>

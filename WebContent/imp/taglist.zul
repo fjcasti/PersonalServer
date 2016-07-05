@@ -1,0 +1,43 @@
+<zk xmlns:h="http://www.w3.org/1999/xhtml">
+	<h:table style="background-color:lightblue" width="100%" apply="com.jsantos.ps.objects.tag.TagsPanelController">
+		<h:tr>
+		<h:td width="40px">
+		  <!-- <button label="Delete" id="deleteButton" image="/img/Trash_32.png"  orient="vertical" dir="reverse" />
+			-->
+			<image id="deleteButton" src="/img/Trash_32.png" tooltiptext="Delete" />
+		 </h:td>
+			<!-- <h:td class="z-label" width="60px">Tags: </h:td> -->
+			
+			<h:td>
+				<h:table cellspacing="5">
+					<h:tr id="tagList">
+						<h:td  class="z-label" style="background-color:lightyellow" >
+							<image id="Work" src="/img/icons/delete.png" />
+							Work
+						</h:td>
+						<h:td  class="z-label" style="background-color:lightyellow" >
+							<image id="IDCGlobal" src="/img/icons/delete.png" />
+							IDCGlobal
+						</h:td>
+						<h:td  class="z-label" style="background-color:lightyellow" >
+							<image id="Howto" src="/img/icons/delete.png" />
+							Howto
+						</h:td>
+					</h:tr>
+				</h:table>
+			</h:td>
+			
+			<h:td align="right" class="z-label" >
+			<hlayout id = "tagCombos">
+				 New tag:
+				<combobox id="typeCombobox" width="100px">
+					<comboitem label="Type new tag..."/>
+				</combobox>
+				<combobox id="systemTagCombobox" width="100px" readonly="true" autodrop="true">
+					<comboitem label="System tags..."/>
+				</combobox>
+			</hlayout>
+			</h:td>
+		</h:tr>
+	</h:table>
+</zk>

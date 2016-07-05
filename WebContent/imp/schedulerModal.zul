@@ -1,0 +1,75 @@
+<window id="schedulerForm" title="Scheduler" border="normal" width="600px"  closable="true"
+apply="com.jsantos.ps.scheduler.SchedulerModalController" >
+ <vlayout>
+ <tabbox >
+  	<tabs>
+        <tab label="Easy"  />
+        <tab label="Advanced"  />
+    </tabs>
+    
+    <tabpanels>
+        <tabpanel>
+        <radiogroup id="sv1"  />
+         		<hlayout>
+        			<radio radiogroup="sv1" label="Run every" />
+        			<spinner id="easyMinSpinner" constraint="no empty,min 5 max 60" value="5" width="45px"/>
+        			 minutes
+        		</hlayout>
+        		<separator />
+        		<hlayout>
+        			<radio radiogroup="sv1" label="Run every day at" />
+        			<timebox  id="easyTimeboxInput" format="hh:mm:ss" width="100px" onCreate="self.value = new Date()"/>
+        		</hlayout>
+        		<separator />
+        		<hlayout>
+        			<radio radiogroup="sv1" label="Run every " />
+        			<spinner  id="easyDayOfWeekSpinner" constraint="no empty,min 1 max 7" value="1" width="45px"/>
+        			day of week at 00:00 (1 = sunday)
+        		</hlayout>
+        
+         </tabpanel>
+        <tabpanel>
+       <hlayout height="70px">
+ 			 <groupbox hflex="1" vflex="1">
+ 			 <caption>Repeat Every</caption>
+        	<hlayout>
+        		<vlayout>Mins:<spinner id="minSpinner" constraint="no empty,min 0 max 60" value="0" width="45px"/></vlayout>
+        		<vlayout>Hours:<spinner id="hourSpinner" constraint="no empty,min 0 max 24" value="0" width="45px"/></vlayout>
+        		<vlayout>Days:<spinner id="daysSpinner" constraint="no empty,min 0 max 7" value="0" width="45px"/></vlayout>
+        		<vlayout>Weeks:<spinner id="weekSpinner" constraint="no empty,min 0 max 5" value="0" width="45px"/></vlayout>
+        		<vlayout>Months<spinner id="monthSpinner" constraint="no empty,min 0 max 12" value="0" width="45px"/></vlayout>
+        	</hlayout>
+ 			</groupbox>
+ 			
+			 <groupbox hflex="1" vflex="1">
+ 			<caption>Beginnin:</caption>
+        	<hlayout>
+        		<datebox id="dateboxInput" width="100px"  />
+        		<timebox id="timeboxInput" format="hh:mm:ss" width="100px"/>
+        		</hlayout>
+ 			</groupbox>
+ 			</hlayout>
+ 			<groupbox hflex="1" vflex="1">
+ 				<caption>Don't run on this Days of Week:</caption>
+         		 <hlayout>
+         			<checkbox id="monday" label="Monday"  />
+          			<checkbox id="tuesday" label="Tuesday"  />
+          			<checkbox id="wednesday" label="Wednesday"  />
+          			<checkbox id="thusday" label="Thursday"  />
+          			<checkbox id="friday" label="Friday"  />
+          			<checkbox id="saturday" label="Saturday"  />
+          			<checkbox id="sunday" label="Sunday"  />
+          		</hlayout>
+ 			</groupbox>
+ 
+ 	  
+ 	  </tabpanel>
+    	
+    </tabpanels>
+   </tabbox>
+  
+   <button id="okButton"  label="Done!" hflex="1" />
+   
+   
+    </vlayout>
+</window>
