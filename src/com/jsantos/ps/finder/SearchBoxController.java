@@ -238,19 +238,18 @@ public class SearchBoxController extends GenericForwardComposer implements Compo
 			label.setSclass("fieldLabel");
 			ObjectList objectList = new ObjectList();	
 						
-			Connection conn = DS.getConnection();			
-			PreparedStatement pst = conn.prepareStatement(sql);
-			ResultSet rs = pst.executeQuery();
-			boolean isRecordAvailable = false;
-			while(rs.next()){
-				isRecordAvailable = true;
-				objectList.addItem(rs.getString("objecttype"),rs.getString("objectkey"), rs.getString("description"));
+			try(Connection conn = DS.getConnection();PreparedStatement pst = conn.prepareStatement(sql);ResultSet rs = pst.executeQuery()){
+				boolean isRecordAvailable = false;
+				while(rs.next()){
+					isRecordAvailable = true;
+					objectList.addItem(rs.getString("objecttype"),rs.getString("objectkey"), rs.getString("description"));
+				}
+				session.setAttribute("searchQuery",searchQuery);
+				if(!isRecordAvailable){
+					objectList.addItem(null, null, "No Result found");
+				}
 			}
 			
-			session.setAttribute("searchQuery",searchQuery);
-			if(!isRecordAvailable){
-				objectList.addItem(null, null, "No Result found");
-			}
 			objectList.setParent(resultsDiv);
 			if(session.getAttribute("objectList")!=null){
 				ObjectList prevObjectList = (ObjectList)session.getAttribute("objectList");
