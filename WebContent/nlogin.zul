@@ -16,8 +16,8 @@
            
             <rows>
             	
-                <row>Username<textbox id="textboxName" value="raj" hflex="1" onOK="textboxPassword.setFocus(true)"/></row>
-                <row>Password <textbox id="textboxPassword" value="password" type="password" hflex="1"/></row>
+                <row>Username<textbox id="textboxName" value="" hflex="1" onOK="textboxPassword.setFocus(true)"/></row>
+                <row>Password <textbox id="textboxPassword" value="" type="password" hflex="1"/></row>
             </rows>
       </grid>
      
